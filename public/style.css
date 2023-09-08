@@ -122,14 +122,10 @@ border-radius: 50%;
 .card{
 border-radius: 20px;
 padding: 17px;
-overflow: hidden;
 margin-top: -175px;
-width: max-content;
-background-color: rgb(115 115 115 / 29%);
+width: auto;
+height: 472px;
+background-color: transparent;
 border: none;
 cursor: pointer;
-}
-.card:hover{
-background-color: #787777;
-transition: 0.3s;
 }
