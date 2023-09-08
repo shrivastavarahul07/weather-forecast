@@ -42,41 +42,6 @@
       return average.toFixed(1);
     }
 
-// Function to toggle temperature units between Celsius and Fahrenheit
-function toggleTemperatureUnits() {
-    const temperatureElements = document.querySelectorAll('.temperature');
-
-    // Check if any temperature elements exist
-    if (temperatureElements.length === 0) {
-        return;
-    }
-
-    const currentUnits = temperatureElements[0].getAttribute('data-units');
-
-    if (currentUnits === 'Celsius') {
-        // Switch to Fahrenheit
-        temperatureElements.forEach((element) => {
-            const celsiusTemperature = parseFloat(element.getAttribute('data-celsius'));
-            if (!isNaN(celsiusTemperature)) {
-                const fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-                element.innerHTML = `${fahrenheitTemperature.toFixed(1)}°F`;
-                element.setAttribute('data-units', 'Fahrenheit');
-            }
-        });
-    } else {
-        // Switch to Celsius
-        temperatureElements.forEach((element) => {
-            const celsiusTemperature = parseFloat(element.getAttribute('data-celsius'));
-            if (!isNaN(celsiusTemperature)) {
-                element.innerHTML = `${celsiusTemperature.toFixed(1)}°C`;
-                element.setAttribute('data-units', 'Celsius');
-            }
-        });
-    }
-}
-
-
-
         // Function to update the weather information on the HTML
     async function updateWeather(cityName) {
       const weatherData = await fetchWeather(cityName);
